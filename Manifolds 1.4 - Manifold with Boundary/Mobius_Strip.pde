@@ -8,7 +8,7 @@ float a;
 void setup() {
   fullScreen(P3D);
   cam = new PeasyCam(this, 85);
-  dt = 0.001;
+  dt = 0.05;
   
   w = 5;
   R = 10;
@@ -19,10 +19,11 @@ void draw() {
   float scale = 0.25 * (5 - a);
   
   background(10, 50, 50);
-  fill(100);
+  fill(255);
   stroke(255);
   strokeWeight(2);
   
+  //Main Mobius Strip
   beginShape(TRIANGLE_STRIP);
   
   for (float t = 2 * (1 - a); t <= 2 * PI - 2 * (1 - a); t += dt) {
@@ -43,6 +44,7 @@ void draw() {
   strokeWeight(5);
   noFill();
   
+  //Boundary
   beginShape();
   
   for (float t = 2 * (1 - a); t <= 2 * PI - 2 * (1 - a); t += dt) {
@@ -73,11 +75,13 @@ void draw() {
  
   endShape();
   
+  //animate
   if (a < 1) {
     a += 0.01;
   }
 }
 
+//To make Mobius Strip at each frame a, and parameters t, s
 public float[] Mobius(float t, float s, float a) {
     float x = a * (R + s * cos(0.5 * t)) * cos(t);
     float y = a * (R + s * cos(0.5 * t)) * sin(t);
