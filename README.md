@@ -1,2 +1,4 @@
-This is a repository where I will store all of the animations for my videos. 
-The name of the video that each animation is in is the title of the folder it is in.
+# Modulo-Times-Table
+Modulo Times Tables around a circle.
+
+In order to run this, download then click on the "index.html" file. It will then run it in your browser.
